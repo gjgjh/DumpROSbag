@@ -34,7 +34,7 @@ for i=1:IMUs.NumMessages
     LinearAccelerationY=imu_tmp{1,1}.LinearAcceleration.Y;
     LinearAccelerationZ=imu_tmp{1,1}.LinearAcceleration.Z;
     
-    imutimestr=[num2str(imu_tmp{1,1}.Header.Stamp.Sec) '.' num2str(imu_tmp{1,1}.Header.Stamp.Nsec)];
+    imutimestr=num2str(IMUs.MessageList.Time(i,1));
     imutime=str2num(imutimestr); % read i-th imu's timestamp
     
     xlsresult(i+1,:)={imutimestr AngularVelocityX AngularVelocityY AngularVelocityZ LinearAccelerationX LinearAccelerationY LinearAccelerationZ};   
